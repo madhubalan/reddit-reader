@@ -1,0 +1,15 @@
+PODS:
+  - Alamofire (4.7.1)
+  - SwiftKeychainWrapper (3.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - SwiftKeychainWrapper
+
+SPEC CHECKSUMS:
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
+
+PODFILE CHECKSUM: 6d0e221813516fe683bc91fb03f7d425dc487dfc
+
+COCOAPODS: 1.4.0

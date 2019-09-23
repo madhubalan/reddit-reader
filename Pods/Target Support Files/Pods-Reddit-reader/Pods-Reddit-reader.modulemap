@@ -1,0 +1,6 @@
+framework module Pods_Reddit_reader {
+  umbrella header "Pods-Reddit-reader-umbrella.h"
+
+  export *
+  module * { export * }
+}
