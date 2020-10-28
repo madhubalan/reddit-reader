@@ -7,7 +7,7 @@ jobs:
     runs-on: [macos-latest]
     env:
       XC_VERSION: ${{ '11.4' }}
-      XC_WORKSPACE: ${{ 'Freshteam.xcworkspace' }}
+      XC_WORKSPACE: ${{ 'Reddit-reader.xcworkspace' }}
       XC_SCHEME: ${{ 'MyApp' }}
     steps:
     - name: Select latest Xcode
