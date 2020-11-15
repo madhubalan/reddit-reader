@@ -3,7 +3,7 @@ on:
   push:
     branches: [master]
 jobs:
-  build:
+  test:
     runs-on: [macos-latest]
     env:
       XC_VERSION: ${{ '11.4' }}
@@ -12,6 +12,15 @@ jobs:
     steps:
     - name: Select latest Xcode
       run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
+
+    - name: Checkout
     - uses: actions/checkout@v2
-    - name: Run Unit and UI Tests
-      run: /usr/bin/xcodebuild test -workspace "$XC_WORKSPACE" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 11'
+
+   - name: Install Dependencies
+      run: |
+        cd Example
+        pod install --repo-update
+      shell: bash
+    - uses: ty0x2333/cocoapods-action@master
+      with:
+        additional_build_params: -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0'
