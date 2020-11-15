@@ -6,7 +6,7 @@ jobs:
     env:
       XC_VERSION: ${{ '11.4' }}
       XC_WORKSPACE: ${{ 'Reddit-reader.xcworkspace' }}
-      XC_SCHEME: ${{ 'Reddit-reader' }}
+      XC_SCHEME: ${{ 'Reddit-readerTests' }}
     steps:
     - uses: actions/checkout@master
     - name: Set XCode Version
@@ -15,5 +15,5 @@ jobs:
       run: |
         pod install --repo-update
       shell: bash
-    - name: Run Unit and UI Tests
-      run: /usr/bin/xcodebuild test -workspace "$XC_WORKSPACE" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 11'
+    - name: Run Unit Tests
+      run: /usr/bin/xcodebuild test -workspace "$XC_WORKSPACE" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 11' -enableCodeCoverage YES
