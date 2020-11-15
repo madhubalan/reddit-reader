@@ -16,4 +16,4 @@ jobs:
         pod install --repo-update
       shell: bash
     - name: Run Unit Tests
-      run: /usr/bin/xcodebuild test -workspace "$XC_WORKSPACE" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 11' -enableCodeCoverage YES | xcpretty --report junit --report html
+      run: /usr/bin/xcodebuild build-for-testing -workspace "$XC_WORKSPACE" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 11' -enableCodeCoverage YES | xcpretty --report junit --report html
