@@ -19,6 +19,6 @@ jobs:
       run: /usr/bin/xcodebuild test -workspace "$XC_WORKSPACE" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 11' 
    - name: Install Slather
       run: gem install slather
-   - name: Slather test report
-      run: slather coverage 
+  #  - name: Slather test report
+  #     run: slather coverage 
    
