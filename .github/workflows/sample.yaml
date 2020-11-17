@@ -17,17 +17,9 @@ jobs:
       shell: bash
     - name: Run Unit Tests
       run: /usr/bin/xcodebuild test -workspace "$XC_WORKSPACE" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 11' 
-  #  - name: Install Slather
-  #     run: gem install slather
+   - name: Install Slather
+      run: gem install slather
       
-  #  - name: Slather test report
-  #     run: slather coverage
-    
-  #  - uses: manivelnagarajan/cobertura-report-slather@master
-  #     with:
-  #         path: Coverage/cobertura.xml
-  #         report_name: Freshdesk iOS Code Coverage Report
-  #         repo_token: ${{ secrets.GITHUB_TOKEN }}
-  #         minimum_coverage: 30
-  #         ignore_branch_rate: true
-  #         only_changed_files: true
+   - name: Slather test report
+      run: slather coverage --html --scheme "$XC_SCHEME" --workspace "$XC_WORKSPACE" 
+   
