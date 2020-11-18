@@ -16,9 +16,10 @@ jobs:
         pod install --verbose
       shell: bash
     - name: Run Unit Tests
-      run: /usr/bin/xcodebuild test -workspace "$XC_WORKSPACE" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 11' 
-   - name: Install Slather
-      run: gem install slather
+      run: gem install xcpretty
+      run: /usr/bin/xcodebuild test -workspace "$XC_WORKSPACE" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 11' | xcpretty -c --report junit
+  #  - name: Install Slather
+  #     run: gem install slather
   #  - name: Slather test report
   #     run: slather coverage 
    
